@@ -6,11 +6,7 @@ import { signUserOut } from "../../utils/firebase/firebase";
 import "./navigation.styles.scss";
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
-  const signOutHandler = async () => {
-    await signUserOut();
-    setCurrentUser(null);
-  };
-  console.log(currentUser);
+
   return (
     <Fragment>
       <div className="navigation">
@@ -22,7 +18,7 @@ const Navigation = () => {
             Shop
           </Link>
           {currentUser ? (
-            <Link className="nav-link" to="auth" onClick={signOutHandler}>
+            <Link className="nav-link" to="auth" onClick={signUserOut}>
               Sign Out
             </Link>
           ) : (
