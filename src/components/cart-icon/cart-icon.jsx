@@ -4,14 +4,14 @@ import { useContext } from "react";
 import "./cart-icon.styles.scss";
 
 const CartIcon = () => {
-  const { IsCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { IsCartOpen, setIsCartOpen, productCount } = useContext(CartContext);
   const handleClick = () => {
     setIsCartOpen(!IsCartOpen);
   };
   return (
     <div className="cart-icon-container" onClick={handleClick}>
       <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">0</span>
+      <span className="item-count">{productCount}</span>
     </div>
   );
 };
