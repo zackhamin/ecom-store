@@ -1,4 +1,4 @@
-import CartItem from "../components/cart-item/cart-item";
+import CartItem from "../../components/cart-item/cart-item";
 
 import Todo from "../app/todo";
 import React from "react";
